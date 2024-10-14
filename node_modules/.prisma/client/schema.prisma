@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Messages {
+  id          String   @id @default(uuid())
+  from        String
+  to          String
+  content     String
+  createdAt   DateTime @default(now())
+  visualizado Boolean  @default(false)
+}
+
+model Cadastro_pacientes {
+  id                         String @id @default(uuid())
+  Nome                       String
+  Telefone                   String
+  Email                      String
+  Data_de_Nascimento         String
+  CPF_CNPJ                   String
+  Endereco                   String
+  Numero                     String
+  CEP                        String
+  Cidade                     String
+  Estado                     String
+  Nome_do_Pai_ou_Responsavel String
+  Telefone_Pai               String
+  Nome_da_Mae_ou_Responsavel String
+  Telefone_Mae               String
+  Especialista               String
+
+  recoveryCode Int?
+
+  Eh_Crianca Boolean
+}
+
+model Agendamento {
+  id                             String @id @default(uuid())
+  Nome                           String
+  Telefone                       String
+  Especialista                   String
+  Data_do_Atendimento            String
+  Horario_da_consulta            String
+  Horario_de_Termino_da_consulta String
+  Valor_da_Consulta              Float?
+  Status_da_Consulta             String
+  Status_do_pagamento            String
+  observacao                     String
+}
+
+model cadastro_convenio {
+  id                  String @id @default(uuid())
+  Nome_do_Convenio    String
+  CNPJ                String
+  Valores             String
+  Data_de_Contratacao String
+}
+
+model cadastro_user {
+  id      String @id @default(uuid())
+  Nome    String
+  Email   String
+  Usuario String @unique
+  Senha   String
+
+  recoveryCode Int?
+
+  Profissional Boolean
+  Secretaria   Boolean
+
+  foto String?
+}
+
+model Fluxo_de_caixa {
+  id           String @id @default(uuid())
+  Descricao    String
+  Valor        Float
+  Tipo         String
+  Data         String
+  Especialista String
+}
+
+model Espera {
+  id           String @id @default(uuid())
+  Nome         String
+  Telefone     String
+  Convenio     String
+  Especialista String
+  Observacao   String
+}
+
+model cadastro_prof {
+  id                          String @id @default(uuid())
+  Nome                        String
+  Faixa_Etaria_de_Atendimento String
+  Dias_de_Atendimento         String
+  Horarios_de_Atendimento     String
+  Especialidade               String
+  Registro_do_Profissional    String
+  Especialista                String @unique
+}
+
+model Atendimento {
+  id                     String @id @default(uuid()) //este aqui é um comando do prisma pra gerar um id automatico
+  id_agendamento         String
+  id_paciente            String
+  conteudoAtestado       String
+  conteudoComparecimento String
+  conteudoEncaminhamento String
+  conteudoProntuario     String
+  conteudoAnamineseI     String
+  conteudoAnamineseA     String
+  conteudoNeuroI         String
+  conteudoNeuroA         String
+  dataHora               String
+  tempo                  String
+}
