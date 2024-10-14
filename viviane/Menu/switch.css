@@ -1,0 +1,1218 @@
+/* The switch - the box around the slider */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.open-chat-btn1 {
+  display: none;
+
+}
+
+.open-chat-btn1 i {
+  display: none;
+  font-size: 25px;
+}
+
+iframe {
+  position: absolute;
+  max-height: 100%;
+  margin-right: 0%;
+  z-index: 4;
+  top: 15%;
+  left: 0%;
+  border-radius: 10px;
+  user-select: none;
+  cursor: move;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: content-box;
+}
+
+
+
+/* Define o cursor de movimento na área de padding */
+iframe::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  cursor: move;
+}
+
+
+
+.meuUsuario {
+  flex: 1 1 0;
+  color: white;
+  font-size: 16px;
+  font-family: Nunito;
+  font-weight: 400;
+  word-wrap: break-word
+}
+
+.meuUsuario i {
+  font-size: large;
+  align-items: center;
+}
+
+
+
+.barrinha {
+  position: relative;
+  width: 19%;
+  height: 45%;
+  left: 81.5%;
+  background: rgb(12, 158, 146);
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#meuUsuario1 {
+  flex: 1 1 0;
+  color: white;
+  font-size: 16px;
+  font-family: Nunito;
+  font-weight: 400;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#thumbnail {
+  position: absolute;
+  top: 11%;
+  width: 50px;
+  /* Define a largura da miniatura */
+  height: 50px;
+  /* Mantém a proporção da imagem */
+
+  border-radius: 50%;
+  /* Faz a imagem ficar redonda */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* Adiciona sombra à imagem */
+  left: 5%;
+}
+
+.bi-person-square {
+  font-size: large;
+  position: absolute;
+  margin: 0;
+}
+
+#userGreeting1 {
+  text-align: right;
+  margin: 0;
+  margin-top: 3%;
+
+}
+
+.online {
+  margin: 0;
+  font-size: xx-small;
+  margin: 0;
+  color: aqua;
+  text-align: center;
+}
+
+
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+h4 {
+  margin-top: 20%;
+}
+
+h1 {
+  top: 5%;
+  width: 100%;
+  height: 55%;
+  background: #065757;
+  border-radius: 15px;
+  padding: 10px 13px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 215, 197, 0.878) 0px 30px 30px -20px;
+  margin: 0;
+}
+
+.escrita {
+  display: block;
+  font-size: 13.5px;
+  width: 70%;
+  font-weight: normal;
+  color: white;
+  padding-block: 5px;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  text-transform: uppercase;
+
+}
+
+.contato {
+
+  font-size: 12.5px;
+  width: 70%;
+  font-weight: normal;
+  color: white;
+  padding-block: 5px;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  margin-top: 35%;
+
+
+}
+
+.switch-container {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 9px;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  height: 98%;
+  margin: 0;
+  max-width: 30%;
+  width: 15%;
+}
+
+.switch-container main {
+
+  border-radius: 15px;
+  position: absolute;
+  padding-top: 32px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+}
+
+.switch-container main.off {
+  display: none;
+}
+
+
+.switch {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+}
+
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #eee;
+  transition: 0.4s;
+  border-radius: 0.5em;
+  box-shadow: 0 0.2em #dfd9d9;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5em;
+  width: 1.4em;
+  border-radius: 0.3em;
+  left: 0.3em;
+  bottom: 0.7em;
+  background-color: lightsalmon;
+  transition: 0.4s;
+  box-shadow: 0 0.4em #bcb4b4;
+}
+
+.slider:hover::before {
+  box-shadow: 0 0.2em #bcb4b4;
+  bottom: 0.5em;
+}
+
+input:checked+.slider:before {
+  transform: translateX(2em);
+  background: lightgreen;
+}
+
+.button0,
+.button1,
+.button2,
+.button3 {
+  z-index: 2;
+  position: relative;
+  margin-top: 5%;
+  left: 51%;
+  width: 150px;
+  height: 100px;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0px;
+  cursor: pointer;
+  outline: 0px;
+  padding: 0 2px;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
+.button1 {
+  left: 51%;
+}
+
+.button2 {
+  left: 56%;
+}
+
+.button3 {
+  left: 56%;
+}
+
+
+.backdrop,
+.backdrop1,
+.backdrop2,
+.backdrop3 {
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+  border-radius: 15px;
+  transition: all ease-in-out 0.5s;
+  /* Esta transição deve ser aplicada a todos os backdrops */
+}
+
+/* cadastro paciente */
+.backdrop {
+  top: 28.5%;
+  left: 50%;
+}
+
+/* agendamento */
+.backdrop1 {
+  top: 55%;
+  left: 50%;
+}
+
+/* cadastro convenio */
+.backdrop2 {
+  top: 28.4%;
+  left: 75.2%;
+}
+
+/* fluxo de caixa */
+.backdrop3 {
+  top: 55%;
+  left: 75.2%;
+}
+
+.button0:hover+.backdrop,
+.button1:hover+.backdrop1,
+.button2:hover+.backdrop2,
+.button3:hover+.backdrop3 {
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transform: rotate(15deg) translateX(5%) translateY(-20%);
+}
+
+
+.button0:active,
+.button0:active+.backdrop,
+.button1:active,
+.button1:active+.backdrop1,
+.button2:active,
+.button2:active+.backdrop2,
+.button3:active,
+.button3:active+.backdrop3 {
+  box-shadow: none;
+}
+
+
+a {
+  color: inherit;
+  /* Herda a cor do elemento pai, assim não terá uma cor específica para o link */
+}
+
+.logo {
+  position: absolute;
+  top: 42%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  background-size: 50%;
+}
+
+.out-button {
+  position: absolute;
+  bottom: 59px;
+  left: 55%;
+  transform: translateX(-50%);
+  display: block;
+  width: 50%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 10px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  top: 85%;
+  height: 10%;
+}
+
+.inicio {
+  top: 100%;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(18, 211, 195);
+}
+
+.nsbasetech {
+  text-align: center;
+  font-weight: 10;
+  font-size: 20px;
+  color: rgb(0, 2, 2);
+}
+
+
+@media (min-width: 410px) and (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+
+
+  .switch-container {
+    display: block;
+    z-index: 1000;
+    height: 93%;
+    width: 20%;
+
+
+  }
+
+  .escrita {
+    font-size: 8px;
+    margin-bottom: 15%;
+    top: 20%;
+  }
+
+  .contato {
+    font-size: 8px;
+    margin: 0;
+    margin-left: 5%;
+
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .button0,
+  .button1,
+  .button2,
+  .button3 {
+    left: 105px;
+    top: 97px;
+    z-index: 2;
+    position: absolute;
+  }
+
+  .button1 {
+    top: 205px;
+  }
+
+  .button2 {
+    top: 315px;
+  }
+
+  .button3 {
+    top: 425px;
+  }
+
+  .backdrop,
+  .backdrop1,
+  .backdrop2,
+  .backdrop3 {
+    position: absolute;
+    left: 95px;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    top: 117.9px;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    top: 227px;
+
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    top: 52%;
+
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    top: 69%;
+    margin-bottom: 5%;
+
+  }
+
+  .barrinha {
+    width: 274px;
+    height: 2%;
+    left: 25%;
+
+  }
+
+  .out-button {
+    width: 30%;
+    left: 50%;
+    top: 87%;
+  }
+
+  iframe {
+    display: none;
+  }
+
+  .open-chat-btn1 {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    left: 80%;
+    top: 93%;
+  }
+
+  .open-chat-btn1 i {
+    display: block;
+    font-size: 25px;
+  }
+
+
+
+}
+
+
+
+
+/* Tablets pequenos */
+@media (min-width: 601px) and (max-width: 768px) {
+  .open-chat-btn1 {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    left: 80%;
+    top: 93%;
+  }
+
+  .open-chat-btn1 i {
+    display: block;
+    font-size: 25px;
+  }
+
+
+  .logo {
+    display: none;
+  }
+
+  .switch-container {
+    width: auto;
+    height: 88%;
+  }
+
+  .contato {
+    font-size: 8px;
+    margin-left: 5%;
+    text-align: center;
+    left: 5%;
+  }
+
+  .escrita {
+    font-size: 8px;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .button0 {
+    z-index: 2;
+    position: relative;
+    margin-top: 39.5px;
+    left: 2px;
+    top: -2px;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 2px;
+    top: 16px;
+    margin-top: 5%;
+  }
+
+  .button2 {
+    left: 40px;
+    top: -2px;
+    ;
+    margin-top: 0;
+  }
+
+  .button3 {
+    left: 40px;
+    top: 16px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 450px;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 12%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 12%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 53%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 53%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 235px;
+    left: 55%;
+    height: 15%;
+  }
+
+  .out-button {
+    left: 50%;
+  }
+
+
+  iframe {
+    display: none;
+  }
+
+}
+
+
+/* iPad em modo retrato*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .open-chat-btn1 {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    left: 80%;
+    top: 93%;
+  }
+
+  .open-chat-btn1 i {
+    display: block;
+    font-size: 25px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .meuUsuario {
+    font-size: 10px;
+  }
+
+  .meuUsuario i {
+    font-size: 11px;
+  }
+
+
+  .escrita {
+    font-size: 12px;
+  }
+
+  .contato {
+    font-size: 12px;
+    margin-left: 2%;
+
+  }
+
+  .button0 {
+    z-index: 2;
+    position: relative;
+    margin-top: 39.5px;
+    left: 2px;
+    top: -2px;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 2px;
+    top: 16px;
+    margin-top: 5%;
+  }
+
+  .button2 {
+    left: 40px;
+    top: -2px;
+    ;
+    margin-top: 0;
+  }
+
+  .button3 {
+    left: 40px;
+    top: 16px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 450px;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 12%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 12%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 53%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 53%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 235px;
+    left: 55%;
+    height: 15%;
+  }
+
+  .out-button {
+    left: 50%;
+  }
+
+
+  iframe {
+    display: none;
+  }
+
+}
+
+
+/* iPad em modo paisagem*/
+@media (min-width: 1269px) and (max-width: 1368px) {
+
+  .escrita {
+    font-size: 12px;
+  }
+
+  .contato {
+    font-size: 12px;
+    margin-left: 18%;
+    margin-top: 10%;
+
+
+  }
+
+  .button0 {
+    z-index: 2;
+    position: relative;
+    margin-top: 39.5px;
+    left: 261px;
+    top: -2px;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 261px;
+    top: 8px;
+    margin-top: 5%;
+  }
+
+  .button2 {
+    left: 285px;
+    top: -2px;
+    ;
+    margin-top: 0;
+  }
+
+  .button3 {
+    left: 285px;
+    top: 8px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 450px;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 48%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 48%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 75%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 75%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 290px;
+    left: 78%;
+    height: 15%;
+  }
+
+  .out-button {
+    left: 50%;
+  }
+
+  iframe {
+    display: block;
+    width: 26%;
+    height: 85%;
+    left: 72%;
+    top: 9%;
+
+  }
+
+  .open-chat-btn1 {
+    display: none;
+  }
+
+
+
+}
+
+/* iPad em modo paisagem*/
+@media (min-width: 1369px) and (max-width: 1441px) {
+
+  iframe {
+
+    width: 25%;
+    height: 70%;
+    left: 73%;
+    top: 25%;
+
+  }
+
+  .contato {
+    margin-top: 100%;
+  }
+
+  .button0 {
+    z-index: 2;
+    position: relative;
+    margin-top: 39.5px;
+    left: 320px;
+    top: 28px;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 320px;
+    top: 57px;
+    margin-top: 5%;
+  }
+
+  .button2 {
+    left: 376px;
+    top: 28px;
+    margin-top: 0;
+  }
+
+  .button3 {
+    left: 376px;
+    top: 57px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 48%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 48%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 75%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 75%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 18%;
+    top: 5%; 
+    left:82%;  
+    height: 15%;
+  }
+
+
+
+  #thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+
+  
+}
+
+
+
+/* Monitores maiores*/
+@media (min-width: 1442px) and (max-width: 1920px) {
+  iframe {
+    display: block;
+    width: 25%;
+    height: 75%;
+    left: 72%;
+    top: 20%;
+
+  }
+
+  .button0 {
+    z-index: 2;
+    position: relative;
+    margin-top: 50px;
+    left: 320px;
+    top: 85%;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 320px;
+    top: 13px;
+
+  }
+
+  .button2 {
+    left: 377px;
+    top: 2px;
+
+  }
+
+  .button3 {
+    left: 377px;
+    top: 46px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 48%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 48%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 75%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 75%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 20%;
+    top: 5%; 
+    left:80%;  
+    height: 15%;
+  }
+
+
+
+  .contato {
+    margin-top: 70%;
+  }
+
+}
+
+@media (min-width: 1921px) and (max-width: 2500px) {
+  iframe {
+    display: block;
+    width: 20%;
+    height: 65%;
+    left: 79%;
+    top: 25%;
+
+  }
+
+
+
+  .button0 {
+
+    z-index: 2;
+    position: relative;
+    margin-top: 39.5px;
+    left: 448px;
+    top: 78px;
+    width: 150px;
+    height: 100px;
+
+  }
+
+  .button1 {
+    left: 448px;
+    top: 139px;
+    margin-top: 5%;
+  }
+
+  .button2 {
+    left: 575px;
+    top: 79px;
+    margin-top: 0;
+  }
+
+  .button3 {
+    left: 575px;
+    top: 139px;
+    margin-top: 0;
+  }
+
+
+  .backdrop {
+    position: absolute;
+    left: 50%;
+    top: 450px;
+    z-index: 1;
+    width: 150px;
+    height: 100px;
+
+    /* Esta transição deve ser aplicada a todos os backdrops */
+  }
+
+  /* cadastro paciente */
+  .backdrop {
+    left: 48%;
+    top: 29.5%;
+
+  }
+
+  /* agendamento */
+  .backdrop1 {
+    left: 48%;
+    top: 56.5%;
+  }
+
+  /* cadastro convenio */
+  .backdrop2 {
+    left: 75%;
+    top: 29.5%;
+  }
+
+  /* fluxo de caixa */
+  .backdrop3 {
+    left: 75%;
+    top: 56.5%;
+  }
+
+  .barrinha {
+    width: 15%;
+  }
+}

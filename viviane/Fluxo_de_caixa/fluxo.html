@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxo de Caixa</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="fluxo.css">
+  <link rel="stylesheet" href="../chat/chat.css">
+  <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
+  <link rel="stylesheet" href="../global/font.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- <iframe class="unstyled" id="draggable-container"
+  src="https://lufcam.nsbasetech.com/sistema/chat/chat.html" height="550"; width="350" ></iframe> -->
+</head>
+
+<body>
+  <div class="switch-container">
+    <main class="off" id="main-side">
+      <div class="escrita">
+        <h1>
+          <a href="../meuPerfil/meuPerfil.html">
+
+            <div id="meuUsuario"
+              style="flex: 1 1 0; color: white; font-size: 16px; font-family: Nunito; font-weight: 400; word-wrap: break-word">
+              <i style="font-size:large; align-items: center; " class="bi bi-person-square"></i>
+              <br>
+              <p style="text-align: center;" id="userGreeting"></p>
+              <h4 style="font-size: xx-small;margin: 0; color: aqua; text-align: center;">Editar perfil</h4>
+            </div>
+        </h1>
+
+
+        <h4> </a>
+          <a href="../cadastro_prof/cadastro_prof.html">
+            <i class="bi bi-person-lock"></i> Cadastro do Profissional</a>
+        </h4>
+
+        <h4>
+          <a href="#" onclick="redirecionaCadUser()">
+            <i class="bi bi-person-lock"></i> Cadastro de Usuário</a>
+        </h4>
+
+        <h4>
+          <a href="../cadastro_convenio/cadastro_convenio.html">
+            <i class="bi bi-journals"></i> Cadastro de Convênio</a>
+        </h4>
+
+        <h4>
+          <a href="../calendario/calendario.html">
+            <i class="bi bi-calendar2-check"></i> Agendamento</a>
+        </h4>
+
+        <h4>
+          <a href="../Fluxo_de_caixa/fluxo.html" id="flx-lateral">
+            <i class="bi bi-cash-coin"></i> Fluxo de Caixa</a>
+        </h4>
+      </div>
+
+      <div class="contato">
+        <div > Contato </div>
+      
+
+      <div>
+        <a  href="https://wa.me/message/6JNNR37HJXYQM1">
+          <i class="bi bi-whatsapp"></i><span>
+          </span>(19) 98149-4345</a>
+      </div>
+
+      <div>
+        <a  href="https://www.instagram.com/ns_basetech?igsh=eXZ6aDl4dWt5NmRj">
+          <i class="bi bi-instagram"></i><span style="margin-left: 5px;"></span>@ns_basetech </a>
+      </div>
+    </div>
+
+
+    </main>
+    <label class="switch">
+      <input type="checkbox" id="ch-side">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="heading">Fluxo de Caixa</div>
+    <div><b>NS BaseTech</b></div>
+    <div class="hr-customizado"></div>
+
+    <main>
+      <input class="voltar-button" type="button" value="Voltar" id="btn_voltar_flx"></input>
+
+      <div class="resume">
+        <div class="dementrada">
+          Entradas: R$
+          <span class="incomes">0,00</span>
+        </div>
+
+        <div class="demsaida">
+          Saídas: R$
+          <span class="expenses">0,00</span>
+        </div>
+
+        <div class="demtotal">
+          Total: R$
+          <span class="total">0,00</span>
+        </div>
+
+      </div>
+
+      <div class="resume">
+        <div class="divDesc">
+          <label for="desc">Descrição</label>
+          <input type="text" id="desc" />
+        </div>
+
+        <div class="divAmount">
+          <label for="amount">Valor</label>
+          <input type="number" id="amount" />
+        </div>
+
+        <div class="divType">
+          <label for="type">Tipo</label>
+          <select id="type">
+            <option>Entrada</option>
+            <option>Saída</option>
+          </select>
+        </div>
+
+        <div class="divDate">
+          <label for="date">Data</label>
+          <input type="date" id="date" />
+        </div>
+
+        <button class="incluir-button" type="button" id="btnNew">Incluir</button>
+      </div>
+
+      <div class="resume">
+        <h5>Filtros</h5>
+      </div>
+
+      <div class="resume">
+
+
+        <div class="divType">
+          <label for="meses">Mês</label>
+          <select id="meses" name="meses" onchange="loadItens()">
+            <option value="">Todos</option>
+            <option value="01">Janeiro</option>
+            <option value="02">Fevereiro</option>
+            <option value="03">Março</option>
+            <option value="04">Abril</option>
+            <option value="05">Maio</option>
+            <option value="06">Junho</option>
+            <option value="07">Julho</option>
+            <option value="08">Agosto</option>
+            <option value="09">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+        </div>
+
+
+        <div class="divDesc">
+          <label for="selected-year">Ano</label>
+          <input type="number" id="selected-year" placeholder="Todos" onchange="loadItens()" />
+        </div>
+
+        <div class="divType">
+          <label for="selected-Pacientes">Pacientes</label>
+          <select id="selected-Pacientes" name="meses" onchange="loadItens()">
+            <option value="">Todos</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="containertabela">
+        <div class="divTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th class="columnAmount">Valor</th>
+                <th class="columnType">Tipo</th>
+                <th class="columnDate">Data</th>
+                <th class="columnAction"></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+      <button onclick="toggleChat()" class="open-chat-btn1" id="open-chat-btn1">
+        <i class="bi bi-chat-dots"></i>
+    </button>
+    </main>
+
+    <script src="../global/auth.js"></script>
+    <script src="fluxo.js"></script>
+  </div>
+</body>
+
+</html>

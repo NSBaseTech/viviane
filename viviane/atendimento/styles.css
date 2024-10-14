@@ -1,0 +1,690 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  /* alinhamento horizontal */
+  align-items: flex-start;
+  /* alinhamento vertical */
+  height: 0;
+  /* altura total da viewport */
+  margin: 0;
+  /* remova margens padrão */
+
+}
+
+.historicoh2{
+position: absolute;
+top:125%;
+left:16%;
+}
+
+.NS {
+  text-align: center;
+  position: absolute;
+  left:45%;
+  top:15%;
+}
+
+.container {
+  width: 70%;
+  background: #f8fdfd;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 251, 249) 100%);
+  border-radius: 35px;
+  padding: 0px 30px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 215, 197, 0.878) 0px 30px 30px -20px;
+  margin: 15px;
+  height: 280%;
+
+}
+
+.heading {
+position: absolute;
+left:36%;
+top:4%;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(18, 211, 195);
+}
+
+.heading1 {
+text-align: center;
+font-weight: 900;
+font-size: 30px;
+color: rgb(18, 211, 195);
+}
+
+.timer {
+  text-align: center;
+
+}
+
+.timer h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.timer span {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.timer button {
+  width: 25%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.timer button:hover {
+  background-color: #0056b3;
+}
+
+.options {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+}
+
+.options h2 {
+  font-size: 18px;
+
+}
+
+.options ul {
+  list-style: none;
+  padding: 0;
+}
+
+.options button {
+  width: 90%;
+  margin: 3%;
+  --color: rgb(12, 158, 146);
+  --color2: white;
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 20px;
+  border: .3px solid var(--color);
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 25%;
+  font-size: 17px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.options button::after,
+button::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+}
+
+.options button::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.options button:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.options button:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.options button:hover {
+  color: var(--color2);
+}
+
+.options button:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+}
+
+
+.options button:hover {
+  background: rgb(63, 217, 223)
+}
+
+.form-container {
+  float: left;
+  width: 65%;
+  
+}
+
+.form-container h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-fields textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  resize: none;
+}
+
+.form-fields input[type="file"] {
+  margin-top: 10px;
+  
+}
+
+.visual-button {
+  height: 5%;
+  width: 8%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+  color: white;
+  padding-block: 15px;
+  margin-left: 2%;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+}
+
+.voltar-button {
+  height: 10%;
+  width: 10%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 3% auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.history {
+  
+  clear: both;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.history h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#historyList li {
+
+align-items:baseline;
+justify-items: baseline;
+text-align: left;
+left:5%;
+display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+#historyList ul {
+  
+  overflow: auto;
+}
+
+.hr-customizado {
+  width: 70%;
+  /* Ajuste a largura conforme necessário */
+  margin: 5px auto;
+  /* Adiciona margem acima e abaixo da linha e centraliza horizontalmente */
+  height: 2px;
+  /* Altura da linha */
+  background-color: #000203;
+  /* Cor da linha */
+  border: none;
+  /* Remove a borda padrão */
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+h4 {
+  margin-top: 20%;
+}
+
+h1{
+  top:5%;
+  width: 100%;
+  height: 55%;
+  background: #065757;
+  border-radius: 15px;
+  padding: 10px 13px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 215, 197, 0.878) 0px 30px 30px -20px;
+  margin: 0;
+}
+
+.escrita {
+  display: block;
+  font-size: 13.5px;
+  width: 70%;
+  font-weight: normal;
+  color: white;
+  padding-block: 5px;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  text-transform: uppercase;
+
+}
+
+.contato {
+
+  font-size: 12.5px;
+  width: 70%;
+  font-weight: normal;
+  color: white;
+  padding-block: 5px;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: rgba(133, 215, 194, 0.878) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  margin-top: 25%;
+
+
+}
+
+.switch-container {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 9px;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  height: 98%;
+  margin: 0;
+  max-width: 30%;
+  width: 15%;
+}
+
+.switch-container main {
+
+  border-radius: 15px;
+  position: absolute;
+  padding-top: 32px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+}
+
+.switch-container main.off {
+  display: none;
+}
+
+
+.switch {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+}
+
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #eee;
+  transition: 0.4s;
+  border-radius: 0.5em;
+  box-shadow: 0 0.2em #dfd9d9;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5em;
+  width: 1.4em;
+  border-radius: 0.3em;
+  left: 0.3em;
+  bottom: 0.7em;
+  background-color: lightsalmon;
+  transition: 0.4s;
+  box-shadow: 0 0.4em #bcb4b4;
+}
+
+.slider:hover::before {
+  box-shadow: 0 0.2em #bcb4b4;
+  bottom: 0.5em;
+}
+
+input:checked+.slider:before {
+  transform: translateX(2em);
+  background: lightgreen;
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+.menu {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000; /* Cor do texto */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+} 
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+} 
+
+.menu .link {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 8px 0px; /* Padding reduzido para permitir mais botões */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff; /* Fundo branco */
+  color: #000000; /* Cor do texto */
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  width: 100%; /* Garante que o botão ocupe toda a largura */
+  margin-bottom: 2px; /* Espaçamento mínimo entre os botões */
+} 
+
+.menu .link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Fundo transparente */
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 0;
+}
+
+.menu .link svg {
+  width: 14px;
+  height: 14px;
+  fill: #000000; /* Cor do ícone */
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  right: 36px;
+}
+
+.menu .item {
+  position: relative;
+  width: 100%; /* Mantém a largura alinhada com os outros botões */
+}
+
+.menu .item .submenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Alinha o submenu à direita do botão */
+  margin-left: -10px; /* Ajusta a proximidade do submenu ao botão */
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+  pointer-events: none;
+  list-style: none;
+  background-color: #ffffff; /* Fundo branco */
+  min-width: max-content; /* Tamanho mínimo suficiente para o texto */
+}
+
+.menu .item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu .item:hover .link {
+  color: #000000; /* Cor do texto ao hover */
+  border-radius: 16px 16px 0 0;
+}
+
+.menu .item:hover .link::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.menu .item:hover .link svg {
+  fill: #000000; /* Cor do ícone ao hover */
+  transform: rotate(-180deg);
+}
+
+.submenu .submenu-item {
+  width: 100%;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-bottom: 2px; /* Espaçamento mínimo entre os itens do submenu */
+}
+
+.submenu .submenu-link {
+  display: block;
+  padding: 8px 24px; /* Padding reduzido para permitir mais itens no submenu */
+  width: 100%;
+  position: relative;
+  text-align: left;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  color: #000000; /* Cor do texto */
+  background-color: #ffffff; /* Fundo branco */
+  cursor: pointer;
+}
+
+.submenu .submenu-link:hover {
+  color: #ffffff; /* Cor do texto ao hover */
+  background-color: rgb(12, 158, 146); /* Cor de fundo ao hover */
+}
+
+button:disabled {  
+  cursor: not-allowed; /* Cursor de "não permitido" */
+  opacity: 1; /* Garantir que a opacidade não altere o visual */
+}
+
+.historycontainer{
+  
+    width: 70%;
+    background: #f8fdfd;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 251, 249) 100%);
+    border-radius: 35px;
+    padding: 0px 30px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 215, 197, 0.878) 0px 30px 30px -20px;
+    margin: 15px;
+    height: 180%;
+
+}
+
+
+#formContent {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    resize: vertical;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+#formContent:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+.containerSintomas {
+  font-size: small;
+  width: 100%;
+  left:14.5%;
+  height:75%;
+  background: #f8fdfd;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 251, 249) 100%);
+  border-radius: 35px;
+  padding: 20px; /* Ajuste o padding conforme necessário */
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 215, 197, 0.878) 0px 30px 30px -20px;
+  /* margin: 15px; */
+  overflow: auto;/* Para evitar que conteúdos saiam da caixa */
+  display: flex; /* Utilizamos flexbox para o layout em três colunas */
+  flex-wrap: wrap; /* Permite que os elementos quebrem linha conforme necessário */
+}
+
+.coluna {
+width: 30%;
+float: left;
+padding: 10px;
+box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1269px) and (max-width: 1368px) {
+
+  .open-chat-btn1{
+    display:none;
+  }
+  
+  iframe{
+    left:71%;
+    top:15%;
+    width: 28%;
+  }
+ 
+}
+
+@media (min-width: 1369px) and (max-width: 1439px){
+  iframe{
+      display: block;   
+      left:75%;
+      top:35%;
+      
+    }
+
+    .switch-container{
+      width:12%;
+    }
+
+    .contato{
+      margin-top:130%;
+    }
+}
+
+@media (min-width: 1439px) and (max-width: 1920px){
+  iframe{
+    top:30%;
+    left:75%;
+  }
+
+  .contato{
+    margin-top: 83%;
+  }
+}

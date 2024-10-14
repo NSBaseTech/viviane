@@ -1,0 +1,303 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Calendário</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <iframe class="unstyled" id="draggable-container"
+        src="https://lufcam.nsbasetech.com/sistema/chat/chat.html" height="500"; width="400" ></iframe>
+    <link rel="stylesheet" href="calendario.css">
+    <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Oculta o subformulário por padrão */
+        #subform {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <dialog id="mod-agen" class="agendamentoSt">
+
+        <div class="heading">Agendamento</div>
+
+        <div><b>NS BaseTech</b></div>
+        <div class="hr-customizado"></div>
+
+        <form onsubmit="agendamento(event)" id="formagendamento" class="form" data-agendamentoid="0">
+            Paciente: <select class="input" name="name" id="age_name" style="margin-bottom: 2%; margin-right: 2%;"
+                onchange="atualizaTelefone()">
+
+            </select>
+
+
+            </select>
+
+            <!-- <select class="input" type="text" name="name" id="name"  placeholder="Nome"></select> -->
+            <input class="input" type="text" name="phone" id="phone" placeholder="Telefone" disabled>
+            <br>
+            <div>
+                <div class="campomenor">
+                    <label for="date">Data do Atendimento</label>
+                    <input class="inputdata" type="date" name="data_atendimento" id="data_atendimento" required>
+
+
+                    <label for="date">Horário de Inicio da Consulta</label>
+                    <input class="inputdata" type="time" name="horario_consulta" id="horario_consulta" required>
+                   <br>
+                    <label for="date">Horário de Termino da Consulta</label>
+                    <input class="inputdata" type="time" name="horariot_consulta" id="horariot_consulta" required>
+                    <input type="checkbox" id="mostrarSubform"> Repetir
+                </div>
+            </div>
+
+            <form>
+                <label>
+
+                    <div id="subform">
+                        <label for="periodo">Período:</label>
+                        <select style="margin:2%;" name="periodo" id="periodo">
+                            <option value="">Selecione...</option>
+                            <option value="semanal">Semanal</option>
+                            <option value="quinzenal">Quinzenal</option>
+                            <option value="mensal">Mensal</option>
+                            <option value="anual">Anual</option>
+                        </select>
+
+                        <label for="repeticoes">Repetições:</label>
+                        <input class="inputdata" type="number" id="repeticoes">
+
+
+
+                </label>
+
+            </form>
+            </div>
+            <br>
+
+            <input class="input" type="number" name="valor_consulta" id="valor_consulta"
+            placeholder="Valor da Consulta" step="0.01" min="0">
+
+            <h4 class="margem">Status do Pagamento</h4>
+            <select id="status_pagamento" class="input" type="text"></select>
+
+            <div class="status_c">
+                <h4 class="margem">Status da Consulta</h4>
+                <select id="status_c" class="input" type="text"></select>
+            </div>
+
+            <input class="input" type="text" name="observacao" id="observacao" placeholder="Observação">
+
+            <input class="login-button" type="submit" value="AGENDAR" id="btn_agendar">
+            <input class="login-button" type="button" value="FECHAR" id="btn-close">
+
+
+            <input type="hidden" id="id_agendamento" name="id_agendamento">
+
+            <input class="login-button" type="button"
+                onclick="atendimento(document.getElementById('id_agendamento').value, document.getElementById('age_name').value)"
+                value="Iniciar atendimento" id="btn-start-atendimento">
+
+        </form>
+    </dialog>
+
+
+    <!-- Lista espera -->
+
+    <dialog id="mod-espera" class="esperaSt">
+
+        <form onsubmit="espera(event)" id="formespera">
+
+            <div class="heading">Lista de Espera</div>
+
+            <div class="inputespera">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input class="input" name="name" id="esp-name" placeholder="Nome"></input></th>
+                            <th><input class="input" type="text" name="phone" id="esp-phone" placeholder="Telefone"></input></th>
+                            <th><input class="input" name="convenio" id="esp-convenio" placeholder="Convênio"></input></th>
+                            <th><input class="input" type="text" name="observacao" id="esp-observacao" placeholder="Observação"></th>
+                            
+                        </tr>
+                    </thead>
+                </table>
+                <th>
+                    <!-- <optgroup label="Especialista"></optgroup>
+                    <select style="width:50%;" class="input" type="text" name="Especialista" id="esp-especialista"></select> -->
+                
+            </div>
+
+
+
+            <input class="close-button" type="submit" value="Adicionar" id="btn_adicionar">
+            <input type="hidden" id="id_agendamento" name="id_agendamento">
+
+        </form>
+
+
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="columnAmount">Nome</th>
+                        <th class="columnType">Telefone</th>
+                        <th class="columnAction">Convênio</th>
+                        <th class="columnAction">Especialista</th>
+                        <th class="columnAction">Observação</th>
+                        <th class="columnAction">#</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyEspera">
+                </tbody>
+
+            </table>
+        </div>
+        <input class="close-button" type="submit" value="FECHAR" id="btn-close-espera">
+    </dialog>
+
+    <dialog id="mod-cancelado" class="canceladoSt">
+
+        <form onsubmit="cancelado(event)" id="formcancelado" class="form">
+
+            <div class="heading">Lista de Consultas</div>
+
+            <select class="input" name="name" id="age_name_cancelado" style="margin-bottom: 2%; margin-right: 2%;">
+                <option value="">Selecione um paciente</option>
+            </select>
+
+            <button class="cancel-button" onclick="loadConsultas(event)">Buscar Consultas</button>
+            <br>
+
+            <br>
+
+            <div><b>Lista de Consultas</b></div>
+            <div class="containertabela">
+                <div class="tableCancelados">
+                    <table id="tableCancelados">
+                        <thead>
+                            <tr>
+                                <th>Selecione</th>
+                                <th class="columnAmount">Nome do Paciente</th>
+                                <th class="columnType">Data da Consulta</th>
+                                <th class="columnAction">Horário da Consulta</th>
+                                <th class="columnAction">Horário de Término</th>
+                                <th class="columnAction">Status da Consulta</th>
+                                <th class="columnAction">Status do Pagamento</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyCancelado">
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <button class="cancel-button" onclick="deleteSelectedRows(event)">Excluir Selecionados</button>
+
+                <input class="login-button" type="button" value="FECHAR" id="btn-close-cancelado">
+        </form>
+
+    </dialog>
+
+    <header>
+        <input class="voltar-button" type="button" value="Voltar" id="btn_voltar_a">
+
+        <div id="selectedName" class="nameEspec"
+            style="font-family: Nunito;">
+            Selecione um especialista
+        </div>
+
+
+        <select style="padding: 8px; background: white; border-radius: 8px" id="lista">
+            <option value="-">Selecione um especialista</option>
+        </select>
+
+        <button id="espera" onclick="AbrirEspera()"
+            style="padding: 8px; background: #0D87E9; border-radius: 8px; justify-content: center; align-items: center; display: flex">
+            <i class="ph ph-clock" style="color: white; height: full; width: full;"></i>
+        </button>
+
+        <button id="cancelado" onclick="AbrirCancelado()"
+            style="padding: 8px; background: #0D87E9; border-radius: 8px; justify-content: center; align-items: center; display: flex">
+            <i class="bi bi-list-check" style="color: white; height: full; width: full;"></i>
+        </button>
+
+        <button id="agendamento" class="novoagendamento">
+            <i class="ph ph-plus" style="color: white;"></i>
+            <div  class="escritaN" style="font-family: Nunito;">
+                NOVO AGENDAMENTO</div>
+        </button>
+
+
+
+    </header>
+
+    <main>
+        <div class="calendar"> <!--calendario-->
+            <div class="calendar-header">
+                <span class="month-picker" id="month-picker"> May </span>
+                <div class="year-picker" id="year-picker">
+                    <span class="year-change" id="pre-year">
+                        <pre><</pre>
+                    </span>
+                    <span id="year">2024 </span>
+                    <span class="year-change" id="next-year">
+                        <pre>></pre>
+                    </span>
+                </div>
+            </div>
+
+            <div class="calendar-body">
+                <div class="calendar-week-days">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                </div>
+                <div class="calendar-days">
+                </div>
+            </div>
+            <div class="calendar-footer">
+            </div>
+            <div class="date-time-formate">
+                <div class="day-text-formate">HOJE</div>
+                <div class="date-time-value">
+                    <div class="time-formate">01:41:20</div>
+                    <div class="date-formate">27 - Março - 2024</div>
+                </div>
+            </div>
+            <div class="month-list"></div>
+        </div>
+
+        <div class="container"> <!--lista-->
+            <ol class="olcards" id="olcards">
+
+            </ol>
+        </div>
+
+
+        <button onclick="toggleChat()" class="open-chat-btn1" id="open-chat-btn1">
+            <i class="bi bi-chat-dots"></i>
+        </button>
+    </main>
+    <script src="../global/auth.js"></script>
+    <script type="text/javascript" src="calendario.js"></script>
+    <script src="../chat/chat.js"></script>
+
+</body>
+
+</html>

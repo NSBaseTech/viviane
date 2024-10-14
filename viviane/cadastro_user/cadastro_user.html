@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/font.css">
+    <link rel="stylesheet" href="cadastro_user.css">
+    <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <title>cadastro_usuario</title>
+</head>
+
+
+<body>
+    <div class="switch-container">
+        <main class="off" id="main-side">
+            <div class="escrita">
+               
+                <h4> </a>
+                    <a href="../cadastro_prof/cadastro_prof.html">
+                        <i class="bi bi-person-lock"></i> Cadastro do Profissional</a>
+                </h4>
+
+                <h4>
+                    <a href="#" onclick="redirecionaCadUser()">
+                        <i class="bi bi-person-lock"></i> Cadastro de Usuário</a>
+                </h4>
+
+                <h4>
+                    <a href="../cadastro_convenio/cadastro_convenio.html">
+                        <i class="bi bi-journals"></i> Cadastro de Convênio</a>
+                </h4>
+
+                <h4>
+                    <a href="../calendario/calendario.html">
+                        <i class="bi bi-calendar2-check"></i> Agendamento</a>
+                </h4>
+
+                <h4>
+                    <a href="../Fluxo_de_caixa/fluxo.html" id="flx-lateral">
+                        <i class="bi bi-cash-coin"></i> Fluxo de Caixa</a>
+                </h4>
+            </div>
+
+            <div>
+                <div class="contato"> Contato </div>
+            </div>
+
+            <div>
+                <a class="contato" href="https://wa.me/message/6JNNR37HJXYQM1">
+                    <i class="bi bi-whatsapp"></i><span>
+                    </span>(19) 98149-4345</a>
+            </div>
+
+            <div>
+                <a class="contato" href="https://www.instagram.com/ns_basetech?igsh=eXZ6aDl4dWt5NmRj">
+                    <i class="bi bi-instagram"></i><span style="margin-left: 5px;"></span>@ns_basetech </a>
+            </div>
+
+
+        </main>
+        <label class="switch">
+            <input type="checkbox" id="ch-side">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="container">
+
+        <div class="heading">Cadastro de Usuário</div> <br>
+
+        <div class="NS"><b>NS BaseTech</b></div>
+        <div class="hr-customizado"></div>
+
+
+        <form onsubmit="cadastro_user(event)" class="form">
+
+            <input class="voltar-button" type="button" value="Voltar" id="btn_voltar_b">
+
+            <br>
+            <label class="open-chat-btn1" for="fotinha"> <i class="bi bi-pencil"></i></label>
+            <div class="input-div">
+                <input id="fotinha" class="input1" name="file" type="file" accept="image/*" onchange="displayThumbnail(event)">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round"
+                    stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"
+                    class="icon">
+                    <polyline points="16 16 12 12 8 16"></polyline>
+                    <line y2="21" x2="12" y1="12" x1="12"></line>
+                    <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                    <polyline points="16 16 12 12 8 16"></polyline>
+                </svg>
+                <img id="thumbnail" src="" alt="Thumbnail" style="display:none;">
+            </div>
+
+
+            <!-- </div> -->
+            <div style="text-align: center;">Foto</div>
+
+            <input class="input" type="NAME" name="name" id="name" placeholder="Nome">
+            <input class="input" type="EMAIL" name="email" id="email" placeholder="E-mail">
+            <input class="input" type="user" name="user" id="user" placeholder="Usuario">
+            <input class="input" type="password" name="senha" id="senha" placeholder="Senha">
+            <input class="input" type="password" name="c_senha" id="c_senha" placeholder="Confirme sua senha">
+
+
+            <input class="inputdata" type="checkbox" name="profissional" id="profissional"> Profissional
+            <br>
+            <input class="inputdata" type="checkbox" name="secretaria" id="secretaria"> Secretaria
+            <input class="voltar-button" type="submit" value="Enviar" id="btn_enviar_caduser">
+
+            <p>Já possui uma conta? <a href="../Login/Login.html">Entrar</a></p>
+
+
+        </form>
+    </div>
+
+    <script src="../global/auth.js"></script>
+    <script type="text/javascript" src="cadastro_user.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/font.css">
+    <link rel="stylesheet" href="redefinir_senha.css">
+    <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
+  
+    <title>Redefinir Senha</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="heading">Redefinir Senha</div> <br>
+        <center>
+            <div><b>NS BaseTech</b></div>
+            <div class="hr-customizado"></div>
+        </center>
+        <form onsubmit="resetar_senha(event)" class="form">
+
+            <input class="voltar-button" type="button" value="Voltar" id="btn_voltar_d"></input>
+            <input class="input" type="codigo" name="codigo" id="codigo" placeholder="Código"></input>
+            <input class="input" type="password" name="senha" id="senha" placeholder="Nova senha"></input>
+            <input class="input" type="password" name="c_senha" id="c_senha" placeholder="Confirme sua nova senha">
+            </input>
+            <input class="login-button" type="submit" value="Redefinir" id="btn_enviar">
+            </input>
+        </form>
+    </div>
+
+    <script src="../global/auth.js"></script>
+    <script type="text/javascript" src="redefinir_senha.js"></script>
+
+</body>
+
+</html>

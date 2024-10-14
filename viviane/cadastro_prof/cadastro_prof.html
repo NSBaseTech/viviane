@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/font.css">
+    <link rel="stylesheet" href="cadastro_prof.css">
+    <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../chat/chat.css"> 
+    <iframe class="unstyled"
+        src="https://lufcam.nsbasetech.com/sistema/chat/chat.html" height="500"; width="350" ></iframe>
+    <title>Cadastro do Profissional</title>
+</head>
+
+<body>
+    <div class="switch-container">
+        <main class="off" id="main-side">
+            <div class="escrita">
+                <br>
+                <h1>
+                    <a href="../meuPerfil/meuPerfil.html">
+
+                        <div id="meuUsuario"
+                            style="flex: 1 1 0; color: white; font-size: 16px; font-family: Nunito; font-weight: 400; word-wrap: break-word">
+                            <i style="font-size:large; align-items: center; " class="bi bi-person-square"></i> 
+                            <br>
+                            <p style="text-align: center;" id="userGreeting"></p>
+                            <h4 style="font-size: xx-small;margin: 0; color: aqua; text-align: center;">Editar perfil</h4>
+                        </div>
+                </h1>
+
+
+                <h4> </a>
+                    <a href="../cadastro_prof/cadastro_prof.html">
+                        <i class="bi bi-person-lock"></i> Cadastro do Profissional</a>
+                </h4>
+
+                <h4>
+                    <a href="#" onclick="redirecionaCadUser()">
+                        <i class="bi bi-person-lock"></i> Cadastro de Usuário</a>
+                </h4>
+
+                <h4>
+                    <a href="../cadastro_convenio/cadastro_convenio.html">
+                        <i class="bi bi-journals"></i> Cadastro de Convênio</a>
+                </h4>
+
+                <h4>
+                    <a href="../calendario/calendario.html">
+                        <i class="bi bi-calendar2-check"></i> Agendamento</a>
+                </h4>
+
+                <h4>
+                    <a href="../Fluxo_de_caixa/fluxo.html" id="flx-lateral">
+                        <i class="bi bi-cash-coin"></i> Fluxo de Caixa</a>
+                </h4>
+            </div>
+
+            <div class="contato">
+                <div > Contato </div>
+              
+        
+              <div>
+                <a  href="https://wa.me/message/6JNNR37HJXYQM1">
+                  <i class="bi bi-whatsapp"></i><span>
+                  </span>(19) 98149-4345</a>
+              </div>
+        
+              <div>
+                <a  href="https://www.instagram.com/ns_basetech?igsh=eXZ6aDl4dWt5NmRj">
+                  <i class="bi bi-instagram"></i><span style="margin-left: 5px;"></span>@ns_basetech </a>
+              </div>
+            </div>
+
+        </main>
+        <label class="switch">
+            <input type="checkbox" id="ch-side">
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+
+    <div class="container">
+        <div class="heading">Cadastro do Profissional</div> <br>
+        
+        <div class="NS"><b>NS BaseTech</b></div>
+        <div class="hr-customizado"></div>
+    
+    
+    <form onsubmit="cadastro_prof(event)" class="form">
+
+        <input class="voltar-button" type="button" value="Voltar" id="btn_voltar_pr">
+        <select style="padding: 8px; background: white; border-radius: 8px" id="lista">
+            <option value="-">Selecione um especialista</option>
+        </select>
+
+        <input class="input" type="NAME" name="name" id="nameprof" placeholder="Nome">
+<br>
+        <br>
+        Faixa Etária de Atendimento<input class="input" type="text" name="faixa_etaria" id="faixa_etaria" placeholder="Faixa Etária de Atendimento">
+       <br>
+        <br>
+        Dias de Atendimento<input class="input" type="text" name="data_atendimento" id="data_atend" placeholder="Dias de Atendimento"> 
+    <br>    
+        <br>
+        Horários de Atendimento<input class="input" type="text" name="horario_atendimento" id="horario_atend" placeholder="Horários de Atendimento"> 
+      <br>
+        <br>
+        Especialidade<input class="input" type="text" name="especialidade" id="especialidade" placeholder="Especialidade">
+      <br>
+        <br>
+        Registro do Profissional<input class="input" type="text" name="reg_profissional" id="reg_profissional" placeholder="Registro do Profissional"> 
+      
+     
+        <input class="voltar-button" type="submit" value="Enviar" id="btn_enviar_cadprof">
+
+    </form>
+</div>
+
+<script src="../global/auth.js"></script>
+<script type="text/javascript" src="cadastro_prof.js"></script>
+<script src="../chat/chat.js"></script>
+
+</body>
+
+</html>

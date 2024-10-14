@@ -1,0 +1,23 @@
+{
+	"name": "poggetti-chat",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src"
+	},
+	"author": "Ryan Gomes Martins",
+	"license": "MIT",
+	"dependencies": {
+		"@prisma/client": "5.10.2",
+		"cors": "^2.8.5",
+		"express": "^4.18.3",
+		"express-async-errors": "^3.1.1",
+		"jsonwebtoken": "^9.0.2",
+		"prisma": "^5.10.2",
+		"socket.io": "^4.7.4"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.0"
+	}
+}

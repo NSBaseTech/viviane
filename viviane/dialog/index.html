@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn-open">Abrir</button>
+
+    <dialog id="modal">
+        <form>
+            formde agendamentaq
+            </form>
+
+        <button id="btn-close">Fechar</button>
+    </dialog>
+
+    <script>
+        const btnOpen = document.getElementById("btn-open")
+        const btnClose = document.getElementById("btn-close")
+        const modal = document.getElementById("modal")
+
+        btnOpen.addEventListener("click",e=>{
+            modal.showModal();
+        })
+
+        btnClose.addEventListener("click", e=>{
+            modal.close()
+        })
+    </script>
+</body>
+</html>

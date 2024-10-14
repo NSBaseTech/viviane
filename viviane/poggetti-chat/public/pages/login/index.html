@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../global/styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="form">
+            <div class="input-container">
+                <input type="text" id="username" name="username" required>
+                <label for="username">Usuário</label>
+                <i class="ph ph-user"></i>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Senha</label>
+                <i class="ph ph-lock"></i>
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+
+        <p>Não tem uma conta? <a href="/public/pages/cadastro">Criar nova conta</a></p>
+    </div>
+
+    <script src="../../global/auth.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
