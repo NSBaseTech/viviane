@@ -14,7 +14,7 @@ verificaNaoAutenticado()
    const usuario = document.getElementById("exampleInputLOGIN").value
 
    if (usuario === "") {
-      alert("preencha seu login")
+      alert("Por favor, preencha seu Login")
       return
    }
 
