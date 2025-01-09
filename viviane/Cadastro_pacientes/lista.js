@@ -24,7 +24,7 @@ let items = [];
 
 function editarItem(index) {
   const url = new URL(window.location.href)
-  url.pathname = `/sistema/EditarPacientes/editar.html`
+  url.pathname = `/viviane/EditarPacientes/editar.html`
   url.searchParams.set("id",  items.filter(item => item.Especialista === list.value)[index].id);
   window.location.href = url.toString()
 }

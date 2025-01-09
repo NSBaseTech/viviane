@@ -1,4 +1,4 @@
-verificaAutenticado()
+//verificaAutenticado()
 
 document.getElementById("btn_voltar_b").addEventListener("click", () => {
     window.location.href = '../Login/Login.html'

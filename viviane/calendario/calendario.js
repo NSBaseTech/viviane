@@ -1096,7 +1096,7 @@ document.getElementById('cancelado').addEventListener('click', () => {
 function atendimento(id, nome) {
     const nomePaciente = age_name.options[age_name.selectedIndex].text;
     const url = new URL(window.location.href)
-    url.pathname = "/sistema/atendimento/atendimento.html";
+    url.pathname = "/viviane/atendimento/atendimento.html";
     url.searchParams.set("id", id);
     url.searchParams.set("id_paciente", nameinp.value);
     url.searchParams.set("nome", nomePaciente);

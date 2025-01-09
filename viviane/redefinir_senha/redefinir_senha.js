@@ -33,6 +33,6 @@ function resetar_senha(event) {
             "Content-Type": "application/json"
         }
     }).finally(() => {
-        window.location.href = `/sistema/Login/Login.html`
+        window.location.href = `/viviane/Login/Login.html`
     })
 }
