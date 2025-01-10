@@ -6,7 +6,7 @@ const prisma = require("./prima")
 
 const express = require("express")
 const jsonwebtoken = require("jsonwebtoken")
-const porta = 3000
+const porta = 3001
 const app = express()
 
 const { fazedor_de_senha } = require("./hash")
