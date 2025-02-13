@@ -16,6 +16,11 @@ const isLeapYear = (year) => {
 const getFebDays = (year) => {
     return isLeapYear(year) ? 29 : 28;
 };
+
+
+const anoPassado = new Date().getFullYear() - 1;
+const valorQuinzenal = (anoPassado % 4 === 0 && (anoPassado % 100 !== 0 || anoPassado % 400 === 0)) ? 14 : 15;
+
 let calendar = document.querySelector('.calendar');
 const month_names = [
     'Janeiro',
@@ -469,7 +474,7 @@ function calculadata() {
             periodo = 7;
             break;
         case "quinzenal":
-            periodo = 15;
+            periodo = valorQuinzenal;
             break;
         case "mensal":
             periodo = 30;
