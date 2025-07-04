@@ -826,7 +826,7 @@ iframe {
 }
 
 
-@media (min-width: 410px) and (max-width: 600px) {
+@media (max-width: 600px) {
   iframe {
     display: none;
   }

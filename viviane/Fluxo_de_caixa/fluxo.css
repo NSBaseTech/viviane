@@ -410,8 +410,54 @@ th {
 
 
 
-@media (min-width: 410px) and (max-width: 600px) {
-
+@media (max-width: 600px) {
+ iframe{
+    display:none;
+   }
+ 
+   h1{
+     display: none;
+   }
+ 
+   .open-chat-btn1{
+ 
+     display:block;
+     position:fixed;
+     z-index:1;
+     bottom: 20px;
+     right: 20px;
+     width: 50px;
+     height: 50px;
+     background: linear-gradient(45deg, rgb(12, 158, 146) 0%, rgb(63, 217, 223) 100%);
+     color: #fff;
+     border: none;
+     border-radius: 50%;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+     left:83%;
+     top:83%;
+   }
+ 
+   .container{
+     left:13%;
+     width: 78%;
+     height: 158%;
+   }
+ 
+ .containertabela{
+   position: absolute;
+   left:-0.5%;
+   top:101%;
+   width: 102%;
+   border: 10px solid rgb(255, 255, 255);
+ }
+ 
+ .columnAmount {
+   width: 15%;
+ }
 }
 
 
