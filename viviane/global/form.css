@@ -174,7 +174,7 @@ body {
 
 }
 
-@media (min-width: 410px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .container {
     justify-self: center;
     width: 348px;
