@@ -296,7 +296,7 @@ input:checked+.slider:before {
   text-align: center;
 }
 
-@media (min-width: 410px) and (max-width: 600px){
+@media (max-width: 600px){
 .container{
   position:absolute;
   width:70%;
