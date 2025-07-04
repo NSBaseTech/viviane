@@ -185,7 +185,7 @@ body {
 }
 
 /* Celulares Grandes */
-@media (min-width: 410px) and (max-width: 600px){
+@media (max-width: 600px){
   .background-image {
     z-index: -1;
  background-size: 50%;
